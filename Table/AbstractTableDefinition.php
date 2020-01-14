@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table;
+namespace gleisonnanet\DataTablesBundle\Table;
 
 /**
  * @deprecated
@@ -16,7 +16,7 @@ abstract class AbstractTableDefinition extends AbstractDataTable
     {
         if ($triggerDeprecation) {
             @trigger_error(
-                'The '.__CLASS__.' class is deprecated. Use the Gleisonnanet\DataTablesBundle\AbstractDataTable class instead.',
+                'The '.__CLASS__.' class is deprecated. Use the gleisonnanet\DataTablesBundle\AbstractDataTable class instead.',
                 E_USER_DEPRECATED
             );
         }

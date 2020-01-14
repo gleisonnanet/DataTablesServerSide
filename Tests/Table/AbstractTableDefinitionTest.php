@@ -1,11 +1,11 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Tests\Table;
+namespace gleisonnanet\DataTablesBundle\Tests\Table;
 
-use Gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
-use Gleisonnanet\DataTablesBundle\Table\TableDefinition;
-use Gleisonnanet\DataTablesBundle\Table\Column\Column;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
+use gleisonnanet\DataTablesBundle\Table\TableDefinition;
+use gleisonnanet\DataTablesBundle\Table\Column\Column;
+use gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
 
 class TestDefinition extends AbstractTableDefinition
 {

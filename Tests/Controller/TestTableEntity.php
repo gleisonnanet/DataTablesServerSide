@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Tests\Controller;
+namespace gleisonnanet\DataTablesBundle\Tests\Controller;
 
 class TestTableEntity
 {

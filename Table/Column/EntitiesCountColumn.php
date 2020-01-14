@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table\Column;
+namespace gleisonnanet\DataTablesBundle\Table\Column;
 
 /**
  * If the table entity is the inverse side (OneToMany) of an association

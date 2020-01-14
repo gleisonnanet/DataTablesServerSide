@@ -1,14 +1,14 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Twig;
+namespace gleisonnanet\DataTablesBundle\Twig;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Constraints\Choice;
-use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
-use Gleisonnanet\DataTablesBundle\Table\Column\Column;
-use Gleisonnanet\DataTablesBundle\Table\Filter\DateFilter;
-use Gleisonnanet\DataTablesBundle\Table\Filter\TextFilter;
-use Gleisonnanet\DataTablesBundle\Table\Filter\ChoiceFilter;
+use gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
+use gleisonnanet\DataTablesBundle\Table\Column\Column;
+use gleisonnanet\DataTablesBundle\Table\Filter\DateFilter;
+use gleisonnanet\DataTablesBundle\Table\Filter\TextFilter;
+use gleisonnanet\DataTablesBundle\Table\Filter\ChoiceFilter;
 
 /**
  * @codeCoverageIgnore
@@ -88,7 +88,7 @@ class ServersideDataTablesExtension extends \Twig_Extension
             $theme = $this->theme;
         }
 
-        return $twig->render('@GleisonnanetDataTables/table_' . $theme . '.html.twig', [
+        return $twig->render('@gleisonnanetDataTables/table_' . $theme . '.html.twig', [
             'table' => $table,
             'options' => $options,
             'tableId' => $tableId,
@@ -207,7 +207,7 @@ class ServersideDataTablesExtension extends \Twig_Extension
         }
 
         $result = $this->renderDefaults($twig);
-        $result .= $twig->render('@GleisonnanetDataTables/table.js.twig', [
+        $result .= $twig->render('@gleisonnanetDataTables/table.js.twig', [
             'table' => $table,
             'path' => $path,
             'options' => $options,
@@ -262,7 +262,7 @@ class ServersideDataTablesExtension extends \Twig_Extension
         $column->filterRendered = true;
 
         if ('bootstrap4' !== $theme) {
-            return $twig->render('@GleisonnanetDataTables/column_filter_' . $theme . '.html.twig', [
+            return $twig->render('@gleisonnanetDataTables/column_filter_' . $theme . '.html.twig', [
                 'table' => $table,
                 'column' => $column,
                 'options' => $options,
@@ -273,7 +273,7 @@ class ServersideDataTablesExtension extends \Twig_Extension
         $renderer = $twig->getRuntime(TableRenderer::class);
 
         $templates = [];
-        $templates[] = $twig->loadTemplate('@GleisonnanetDataTables/filter_' . $theme . '.html.twig');
+        $templates[] = $twig->loadTemplate('@gleisonnanetDataTables/filter_' . $theme . '.html.twig');
         foreach ($renderer->getThemes($table) as $theme) {
             $templates[] = $twig->loadTemplate($theme);
         }
@@ -342,7 +342,7 @@ class ServersideDataTablesExtension extends \Twig_Extension
         }
 
         if (is_string($object) && class_exists($object)) {
-            /** @var \Gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter $instance */
+            /** @var \gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter $instance */
             $instance = new $object();
             return $this->is_a($instance->getParent(), $className);
         }

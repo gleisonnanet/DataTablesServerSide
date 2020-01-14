@@ -1,8 +1,8 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table;
+namespace gleisonnanet\DataTablesBundle\Table;
 
-use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use gleisonnanet\DataTablesBundle\Table\Column\Column;
 
 interface TableBuilderInterface
 {

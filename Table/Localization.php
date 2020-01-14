@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table;
+namespace gleisonnanet\DataTablesBundle\Table;
 
 class Localization
 {

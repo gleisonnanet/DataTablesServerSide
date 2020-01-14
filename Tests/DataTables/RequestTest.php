@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Tests\DataTables;
+namespace gleisonnanet\DataTablesBundle\Tests\DataTables;
 
 class RequestTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,7 +12,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             'length' => 50,
         ]);
 
-        $dtRequest = new \Gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
+        $dtRequest = new \gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
 
         $this->assertEquals(42, $dtRequest->getDraw());
         $this->assertEquals(25, $dtRequest->getStart());
@@ -33,7 +33,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $dtRequest = new \Gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
+        $dtRequest = new \gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
 
         $this->assertEquals('searchstring', $dtRequest->getSearchValue());
     }
@@ -55,7 +55,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $dtRequest = new \Gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
+        $dtRequest = new \gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
 
         $this->assertEquals('searchstring', $dtRequest->getSearchValue(0));
         $this->assertEquals('searchstring', $dtRequest->getSearchValue('column_1'));

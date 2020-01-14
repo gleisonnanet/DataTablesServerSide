@@ -1,13 +1,13 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Tests\Controller;
+namespace gleisonnanet\DataTablesBundle\Tests\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ScopeInterface;
-use Gleisonnanet\DataTablesBundle\Controller\ServerSideController;
-use Gleisonnanet\DataTablesBundle\DataTables\TableOptionsFactory;
-use Gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
+use gleisonnanet\DataTablesBundle\Controller\ServerSideController;
+use gleisonnanet\DataTablesBundle\DataTables\TableOptionsFactory;
+use gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
 
 class TestServerSide
 {
@@ -26,8 +26,8 @@ class TestContainer implements ContainerInterface
         if (null === $em) {
             $this->services['serverside_datatables'] = new TestServerSide();
         } else {
-            $this->services['serverside_datatables'] = new \Gleisonnanet\DataTablesBundle\DataTables\ServerSide(
-                $em, new \Gleisonnanet\DataTablesBundle\DataTables\DataToStringConverter('en')
+            $this->services['serverside_datatables'] = new \gleisonnanet\DataTablesBundle\DataTables\ServerSide(
+                $em, new \gleisonnanet\DataTablesBundle\DataTables\DataToStringConverter('en')
             );
         }
 
@@ -80,7 +80,7 @@ class ServerSideControllerTest extends \PHPUnit_Framework_TestCase //KernelTestC
         $controller = new ServerSideController();
         $controller->setContainer(new TestContainer());
 
-        $table = 'Gleisonnanet\DataTablesBundle\Tests\DataTables\TestTable';
+        $table = 'gleisonnanet\DataTablesBundle\Tests\DataTables\TestTable';
         $request = Request::create('/datatables/list/' . urlencode($table));
 
         // ?draw=2&columns%5B0%5D%5Bdata%5D=manufacturer&columns%5B0%5D%5Bname%5D=manufacturer&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=true&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=name&columns%5B1%5D%5Bname%5D=name&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=manufacturer_categories&columns%5B2%5D%5Bname%5D=manufacturer_categories&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=categories&columns%5B3%5D%5Bname%5D=categories&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=1&order%5B0%5D%5Bdir%5D=asc&start=0&length=25&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1446965381607
@@ -93,7 +93,7 @@ class ServerSideControllerTest extends \PHPUnit_Framework_TestCase //KernelTestC
     public function testListActionByServiceId()
     {
         $container = new TestContainer();
-        $container->set('datatables.table.test', new \Gleisonnanet\DataTablesBundle\Tests\DataTables\TestTable());
+        $container->set('datatables.table.test', new \gleisonnanet\DataTablesBundle\Tests\DataTables\TestTable());
 
         $controller = new ServerSideController();
         $controller->setContainer($container);

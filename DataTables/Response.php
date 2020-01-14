@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\DataTables;
+namespace gleisonnanet\DataTablesBundle\DataTables;
 
 class Response
 {

@@ -1,6 +1,6 @@
 DataTablesBundle
 ================
-[![Build Status](https://travis-ci.org/uGleisonnanet/serverside-datatables-bundle.svg?branch=master)](https://travis-ci.org/uGleisonnanet/serverside-datatables-bundle)
+[![Build Status](https://travis-ci.org/ugleisonnanet/serverside-datatables-bundle.svg?branch=master)](https://travis-ci.org/ugleisonnanet/serverside-datatables-bundle)
 
 ## What it does
 
@@ -28,7 +28,7 @@ class AppKernel extends Kernel
         $bundles = array(
             // ...
 
-            new Gleisonnanet\DataTablesBundle\gleisonnanetDataTablesBundle(),
+            new gleisonnanet\DataTablesBundle\gleisonnanetDataTablesBundle(),
         );
 
         // ...
@@ -50,7 +50,7 @@ After installing the bundle, make sure you add this route to your routing:
 ### Localization
 
     # app/config/config.yml
-    Gleisonnanet_data_tables:
+    gleisonnanet_data_tables:
         localization:
             locale: "%locale%"
             data:
@@ -70,15 +70,15 @@ Create a Table definition
 
 namespace AppBundle\DataTable;
 
-use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
-use Gleisonnanet\DataTablesBundle\Table\TableBuilderInterface;
-use Gleisonnanet\DataTablesBundle\Table\TableOptions;
-use Gleisonnanet\DataTablesBundle\Table\TableSettings;
-use Gleisonnanet\DataTablesBundle\Table\Column\Column;
-use Gleisonnanet\DataTablesBundle\Table\Column\UnboundColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\CallbackColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;    
+use gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
+use gleisonnanet\DataTablesBundle\Table\TableBuilderInterface;
+use gleisonnanet\DataTablesBundle\Table\TableOptions;
+use gleisonnanet\DataTablesBundle\Table\TableSettings;
+use gleisonnanet\DataTablesBundle\Table\Column\Column;
+use gleisonnanet\DataTablesBundle\Table\Column\UnboundColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\CallbackColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;    
 
 class CustomerTable extends AbstractDataTable
 {
@@ -181,7 +181,7 @@ And in your index template
 ### Access DI container
 
 ```php
-use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
+use gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
 
 class CustomerTable extends AbstractDataTable
 {

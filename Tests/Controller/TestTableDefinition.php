@@ -1,13 +1,13 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Tests\Controller;
+namespace gleisonnanet\DataTablesBundle\Tests\Controller;
 
-use Gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
+use gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
 
 class TestTableDefinition extends AbstractTableDefinition
 {
     public function __construct()
     {
-        parent::__construct('Gleisonnanet\DataTablesBundle\Tests\Controller\TestTableEntity', 'test');
+        parent::__construct('gleisonnanet\DataTablesBundle\Tests\Controller\TestTableEntity', 'test');
     }
 }

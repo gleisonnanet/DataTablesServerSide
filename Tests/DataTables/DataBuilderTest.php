@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Tests\DataTables;
+namespace gleisonnanet\DataTablesBundle\Tests\DataTables;
 
 class DataBuilderTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,7 +12,7 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
             'length' => 50,
         ]);
 
-        $dtRequest = new \Gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
+        $dtRequest = new \gleisonnanet\DataTablesBundle\DataTables\Request($sfRequest);
 
         $this->assertEquals(42, $dtRequest->getDraw());
         $this->assertEquals(25, $dtRequest->getStart());

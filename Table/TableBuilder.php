@@ -1,12 +1,12 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table;
+namespace gleisonnanet\DataTablesBundle\Table;
 
-use Gleisonnanet\DataTablesBundle\Table\Column\ActionsColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\CallbackColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\Column;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\UnboundColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\ActionsColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\CallbackColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\Column;
+use gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\UnboundColumn;
 
 class TableBuilder implements TableBuilderInterface
 {

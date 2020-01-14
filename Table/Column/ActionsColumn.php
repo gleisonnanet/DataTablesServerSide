@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table\Column;
+namespace gleisonnanet\DataTablesBundle\Table\Column;
 
 class ActionsColumn extends UnboundColumn
 {

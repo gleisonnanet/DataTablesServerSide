@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table;
+namespace gleisonnanet\DataTablesBundle\Table;
 
 /**
  * @deprecated
@@ -10,7 +10,7 @@ abstract class AbstractContainerAwareTableDefinition extends AbstractTableDefini
     public function __construct($entity = null, $name = null, $serviceId = null)
     {
         @trigger_error(
-            'The '.__CLASS__.' class is deprecated. Use the Gleisonnanet\DataTablesBundle\AbstractDataTable class instead.',
+            'The '.__CLASS__.' class is deprecated. Use the gleisonnanet\DataTablesBundle\AbstractDataTable class instead.',
             E_USER_DEPRECATED
         );
 

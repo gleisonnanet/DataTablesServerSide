@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Twig;
+namespace gleisonnanet\DataTablesBundle\Twig;
 
 use Twig\Compiler;
 

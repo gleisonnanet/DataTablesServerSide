@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table\Filter;
+namespace gleisonnanet\DataTablesBundle\Table\Filter;
 
 class FilterGroup extends AbstractColumnFilter
 {

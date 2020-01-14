@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\DependencyInjection;
+namespace gleisonnanet\DataTablesBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,7 +10,7 @@ use Symfony\Component\Config\FileLocator;
 /**
  * @codeCoverageIgnore
  */
-class GleisonnanetDataTablesExtension extends Extension
+class gleisonnanetDataTablesExtension extends Extension
 {
     /**
      * {@inheritdoc}

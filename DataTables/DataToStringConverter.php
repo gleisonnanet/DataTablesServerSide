@@ -1,8 +1,8 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\DataTables;
+namespace gleisonnanet\DataTablesBundle\DataTables;
 
-use Gleisonnanet\DataTablesBundle\Table\Localization;
+use gleisonnanet\DataTablesBundle\Table\Localization;
 
 class DataToStringConverter
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\DataTables;
+namespace gleisonnanet\DataTablesBundle\DataTables;
 
-use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
-use Gleisonnanet\DataTablesBundle\Table\Column\Column;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesScalarColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;
-use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesCountColumn;
+use gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
+use gleisonnanet\DataTablesBundle\Table\Column\Column;
+use gleisonnanet\DataTablesBundle\Table\Column\EntitiesScalarColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;
+use gleisonnanet\DataTablesBundle\Table\Column\EntitiesCountColumn;
 
 class DataBuilder
 {

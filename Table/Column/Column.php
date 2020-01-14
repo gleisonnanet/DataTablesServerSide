@@ -1,9 +1,9 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Table\Column;
+namespace gleisonnanet\DataTablesBundle\Table\Column;
 
-use Gleisonnanet\DataTablesBundle\Table\Filter\ChoiceFilter;
-use Gleisonnanet\DataTablesBundle\Table\Filter\TextFilter;
+use gleisonnanet\DataTablesBundle\Table\Filter\ChoiceFilter;
+use gleisonnanet\DataTablesBundle\Table\Filter\TextFilter;
 
 class Column
 {
@@ -13,12 +13,12 @@ class Column
     /** @var string */
     private $field;
 
-    /** @var \Gleisonnanet\DataTablesBundle\Table\AbstractDataTable */
+    /** @var \gleisonnanet\DataTablesBundle\Table\AbstractDataTable */
     private $table;
 
     public $filterRendered = false;
 
-    /** @var \Gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter[] */
+    /** @var \gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter[] */
     private $filterInstances = [];
 
     private $filterBlockPrefixes = null;
@@ -39,7 +39,7 @@ class Column
         'sortable' => true,
         'searchable' => true,
         'width' => null,
-        'filter' => false, // false|'text'|'select' todo: |'bool'|'date'|'datetime'|'date_range'|'datetime_range'|\Gleisonnanet\DataTablesBundle\Table\Filter\FilterInterface
+        'filter' => false, // false|'text'|'select' todo: |'bool'|'date'|'datetime'|'date_range'|'datetime_range'|\gleisonnanet\DataTablesBundle\Table\Filter\FilterInterface
         'filter_options' => [
             'popover' => false,
         ],
@@ -107,7 +107,7 @@ class Column
                 E_USER_DEPRECATED
             );
 
-            if ($this->options['filter'] instanceof \Gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter) {
+            if ($this->options['filter'] instanceof \gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter) {
                 $this->options['filter_options'] = array_merge($this->options['filter']->options, $this->options['filter_options']);
             }
         }
@@ -153,7 +153,7 @@ class Column
     }
 
     /**
-     * @return null|string|\Gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter
+     * @return null|string|\gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter
      */
     public function getFilter()
     {
@@ -177,7 +177,7 @@ class Column
             $filter = $this->options['filter'];
             do {
                 $filter = new $filter();
-                if (!($filter instanceof \Gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter)) {
+                if (!($filter instanceof \gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter)) {
                     throw new \Exception(sprintf('invalid filter class "%s"', $this->options['filter']));
                 }
 
@@ -187,7 +187,7 @@ class Column
             } while (null !== $filter);
 
             return $this->filterInstances;
-        } elseif (is_object($this->options['filter']) && $this->options['filter'] instanceof \Gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter) {
+        } elseif (is_object($this->options['filter']) && $this->options['filter'] instanceof \gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter) {
             $this->filterInstances[] = $this->options['filter'];
             return $this->filterInstances;
         }
@@ -215,7 +215,7 @@ class Column
     }
 
     /**
-     * @return \Gleisonnanet\DataTablesBundle\Table\AbstractDataTable
+     * @return \gleisonnanet\DataTablesBundle\Table\AbstractDataTable
      */
     public function getTable()
     {
@@ -223,7 +223,7 @@ class Column
     }
 
     /**
-     * @param \Gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table
+     * @param \gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table
      */
     public function setTable($table)
     {

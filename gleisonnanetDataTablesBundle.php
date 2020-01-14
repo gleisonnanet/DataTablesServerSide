@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle;
+namespace gleisonnanet\DataTablesBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

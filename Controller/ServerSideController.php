@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Controller;
+namespace gleisonnanet\DataTablesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,7 +30,7 @@ class ServerSideController extends Controller
             $table->setRequestParameters($request->query->get('parameters'));
         }
 
-        /** @var \Gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table */
+        /** @var \gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table */
         $table->setContainer($this->container);
 
         return $this->get('serverside_datatables')->processRequest($table, $request);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\DataTables;
+namespace gleisonnanet\DataTablesBundle\DataTables;
 
 class TableOptionsFactory
 {
@@ -15,18 +15,18 @@ class TableOptionsFactory
     }
 
     /**
-     * @return \Gleisonnanet\DataTablesBundle\Table\TableOptions
+     * @return \gleisonnanet\DataTablesBundle\Table\TableOptions
      */
     public function create()
     {
-        $options = new \Gleisonnanet\DataTablesBundle\Table\TableOptions();
+        $options = new \gleisonnanet\DataTablesBundle\Table\TableOptions();
 
         return $options;
     }
 
     public function getDefaultOptions()
     {
-        $default = \Gleisonnanet\DataTablesBundle\Table\TableOptions::getDefaultOptions($this->defaultLocale);
+        $default = \gleisonnanet\DataTablesBundle\Table\TableOptions::getDefaultOptions($this->defaultLocale);
         $default->merge($this->configuration['table_options']);
         return $default;
     }

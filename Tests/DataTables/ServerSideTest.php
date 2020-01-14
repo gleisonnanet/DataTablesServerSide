@@ -1,9 +1,9 @@
 <?php
 
-namespace Gleisonnanet\DataTablesBundle\Tests\DataTables;
+namespace gleisonnanet\DataTablesBundle\Tests\DataTables;
 
-use Gleisonnanet\DataTablesBundle\DataTables\DataToStringConverter;
-use Gleisonnanet\DataTablesBundle\DataTables\ServerSide;
+use gleisonnanet\DataTablesBundle\DataTables\DataToStringConverter;
+use gleisonnanet\DataTablesBundle\DataTables\ServerSide;
 
 class ServerSideTest extends \PHPUnit_Framework_TestCase
 {
@@ -24,16 +24,16 @@ class ServerSideTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue([1]));
 
 
-        $user1 = new \Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser();
+        $user1 = new \gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser();
         $user1->setId(4711)
             ->setName('Testuser 1')
             ->setStatus(123);
 
-        $group1 = new \Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestGroup();
+        $group1 = new \gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestGroup();
         $group1->setId(1);
         $user1->addGroup($group1);
 
-        $group2 = new \Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestGroup();
+        $group2 = new \gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestGroup();
         $group2->setId(2);
         $user1->addGroup($group2);
 
@@ -102,15 +102,15 @@ class ServerSideTest extends \PHPUnit_Framework_TestCase
             ->getMock();
         $em->expects($this->exactly(1))
             ->method('getRepository')
-            ->with('Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser')
+            ->with('gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser')
             ->will($this->returnValue($repository));
 
-        $metadata = new \Doctrine\ORM\Mapping\ClassMetadataInfo('Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser');
+        $metadata = new \Doctrine\ORM\Mapping\ClassMetadataInfo('gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser');
         $metadata->setIdentifier(['id']);
 
         $em->expects($this->exactly(1))
             ->method('getClassMetadata')
-            ->with('Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser')
+            ->with('gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser')
             ->will($this->returnValue($metadata));
 
 
