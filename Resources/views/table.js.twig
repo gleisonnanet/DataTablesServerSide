@@ -1,0 +1,216 @@
+var {{ tableVar }}_table = $('#{{ tableId }}').DataTable({
+    'ajax': '{{ path }}',
+    'serverSide': true,
+    'order': [
+        {% set first = true %}
+        {%- for column in table.columns %}
+        {% if column.options.order is not null %}
+            {% if not first %} ,{% endif %}[{{ loop.index0 }}, '{{ column.options.order }}']
+            {% set first = false %}
+        {% endif %}
+        {% endfor -%}
+    ],
+    'columns': [{% for column in table.columns %}
+
+        {
+            'data': '{{ column.name }}',
+            'name': '{{ column.name }}',
+            {% if column.options.abbr is not null -%}
+            'title': '<abbr title="{{ column.label }}">{{ column.options.abbr }}</abbr>',
+            {%- endif %}
+            {% if column.options.width is not null -%}
+            'width': '{{ column.options.width }}',
+            {%- endif %}
+            {% if column.options.responsive_priority is not null -%}
+            'responsivePriority': {{ column.options.responsive_priority }},
+            {%- endif %}
+            'visible': {% if column.options.visible %}true{% else %}false{% endif %},
+            'orderable': {% if column.options.sortable %}true{% else %}false{% endif %},
+            'searchable': {% if column.options.searchable %}true{% else %}false{% endif %}
+        }
+        {%- if not loop.last %},
+        {% endif %}
+        {% endfor %}
+
+    ],
+
+    {% if table.options.responsive is defined and table.options.responsive != false %}
+    {% set responsive_details %}
+    {% if table.options.responsive.details == false %}
+        false
+    {% else %}
+        {
+            display: {{ table.options.responsive.details.display | raw }},
+            type: '{{ table.options.responsive.details.type }}'
+        }
+    {% endif %}
+    {% endset %}
+    'responsive': {
+        'details': {{ responsive_details }}
+    },
+    {% endif %}
+
+
+
+    {% if deferLoading is not null %}
+    'data': [
+        {% for row in deferLoading.rows %}
+        {
+            {% for key, value in row %}
+            '{{ key }}': '{{ value }}'{% if not loop.last %},{% endif %}
+            {% endfor %}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    'deferLoading': {{ deferLoading.total }},
+    {% endif %}
+
+    {% if table.options.paging is defined and false == table.options.paging%}
+    'paging': false,
+    {% endif %}
+
+    {% if table.options.pageLength is defined %}
+    'pageLength': {{ table.options.pageLength }},
+    {% endif %}
+
+    {% if table.options.lengthMenu is defined %}
+    'lengthMenu': {{ table.options.lengthMenu | raw }},
+    {% endif %}
+
+    'stateSave': {% if table.options.stateSave %}true{% else %}false{% endif %},
+    'stateDuration': {{ table.options.stateDuration }},
+    'stateLoaded': function (settings, data) {
+        $(data.columns).each(function(index, item) {
+            var value = item.search.search;
+            if (0 === value.length) {
+                return true;
+            }
+
+            var $input = $('#{{ tableId }}_' + settings.aoColumns[index].name + '_filter');
+            var $inputEmpty = $('#{{ tableId }}_' + settings.aoColumns[index].name + '_filter_empty');
+            if (0 < $inputEmpty.length) {
+                if ('|empty=true' == value.substring(value.length - 11)) {
+                    $inputEmpty.prop('checked', true);
+                    value = value.substring(0, value.length - 11);
+                } else if ('|empty=false' == value.substring(value.length - 12)) {
+                    $inputEmpty.prop('checked', false);
+                    value = value.substring(0, value.length - 12);
+                }
+            }
+
+            if (1 === $input.length) {
+                $input.val(value);
+                $input.addClass('filtered');
+                $input.trigger('change');
+                $input.closest('th').addClass('filtered');
+                //$input.closest('thead').addClass('filtered');
+            }
+        });
+    }
+
+    {%- if options is defined and options | length > 0 %}
+    ,
+    {% for key, value in options %}
+    '{{ key }}': {{ value | raw }}
+    {% if not loop.last %},{% endif %}
+    {% endfor %}
+    {% endif %}
+});
+
+{{ tableVar }}_table.resetFilter = function() {
+    $('#{{ tableId }} > thead .datatables-filter-input').val('');
+    $('#{{ tableId }} > thead .datatables-filter-input').trigger('change');
+};
+
+{{ tableVar }}_table.on('responsive-resize', function(event, datatable, columns) {
+    $.each(columns, function(index, visible) {
+        if (visible) {
+            $('.col-head-filter[data-col-index=' + index + ']').show();
+        } else {
+            $('.col-head-filter[data-col-index=' + index + ']').hide();
+        }
+    });
+});
+
+{% for column in table.columns %}
+
+    {% if column.options.filter_empty %}
+    var {{ tableId }}_{{ column.name }}_filter_empty = $('#{{ tableId }}_{{ column.name }}_filter_empty').is(':checked')
+
+    $('body').on('change', '#{{ tableId }}_{{ column.name }}_filter_empty', function() {
+        {{ tableId }}_{{ column.name }}_filter_empty = $(this).is(':checked');
+
+        {% if column.options.filter == false %}
+        var value = '|empty=' + {{ tableId }}_{{ column.name }}_filter_empty.toString();
+        {{ tableVar }}_table.column({{ loop.index0 }})
+                .search(value)
+                .draw();
+        {% else %}
+        $('#{{ tableId }}_{{ column.name }}_filter').trigger('change');
+        {% endif %}
+    });
+    {% endif %}
+
+
+    {% if column.filter is datatables_textfilter or column.filter is datatables_datefilter %}
+    var {{ tableId }}_{{ column.name }}Throttle = null;
+    var on{{ tableId }}_{{ column.name }}TextChange = function($input) {
+        if ({{ tableId }}_{{ column.name }}Throttle != null) {
+            window.clearTimeout({{ tableId }}_{{ column.name }}Throttle);
+            {{ tableId }}_{{ column.name }}Throttle = null;
+        }
+
+        var value = $input.val();
+        {% if column.options.filter_empty %}
+        value += '|empty=' + {{ tableVar }}_{{ column.name }}_filter_empty.toString();
+        {% endif %}
+
+        var empty = (value == '' || value == '|empty=false');
+        if (empty) {
+            $input.removeClass('filtered');
+        } else {
+            $input.addClass('filtered');
+        }
+
+        if ({{ tableVar }}_table.column({{ loop.index0 }}).search() !== value) {
+            {{ tableId }}_{{ column.name }}Throttle = window.setTimeout(function() {
+                {{ tableVar }}_table.column({{ loop.index0 }})
+                        .search(value)
+                        .draw();
+            }, 200);
+        }
+    };
+
+    $('body').on('change', '#{{ tableId }}_{{ column.name }}_filter', function() {
+        on{{ tableId }}_{{ column.name }}TextChange($(this));
+    });
+    $('body').on('keypress keyup', '#{{ tableId }}_{{ column.name }}_filter', function(event) {
+        if ('Enter' == event.key || 13 == event.keyCode) {
+            event.preventDefault();
+        }
+        on{{ tableId }}_{{ column.name }}TextChange($(this));
+    });
+    {% elseif column.filter is datatables_choicefilter %}
+    $('body').on('change', '#{{ tableId }}_{{ column.name }}_filter', function() {
+        var value = $(this).val();
+        {% if column.options.filter_empty %}
+        value += '|empty=' + {{ tableId }}_{{ column.name }}_filter_empty.toString();
+        {% endif %}
+
+        var empty = (value == '' || value == '|empty=false');
+        if (empty) {
+            $(this).removeClass('filtered');
+            $(this).closest('th').removeClass('filtered');
+        } else {
+            $(this).addClass('filtered');
+            $(this).closest('th').addClass('filtered');
+        }
+
+        {{ tableVar }}_table.column({{ loop.index0 }})
+            .search(value)
+            .draw();
+    });
+    {% endif %}
+
+
+{% endfor %}

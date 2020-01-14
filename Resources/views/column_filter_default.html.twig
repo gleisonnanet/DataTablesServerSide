@@ -1,0 +1,20 @@
+{% trans_default_domain "datatables" %}
+
+{% if column.filter is datatables_textfilter %}
+    <input type="text" class="datatables-filter-input" id="{{ table.name }}_{{ column.name }}_filter" placeholder="{{ column.placeholder }}" autocomplete="off">
+{% elseif column.filter is datatables_choicefilter %}
+    <select id="{{ table.name }}_{{ column.name }}_filter" class="datatables-filter-input" {% if column.filterOptions.multiple %} multiple="multiple"{% endif %}>
+
+        {% if not column.filterOptions.multiple %}
+        <option value="">-- {{ column.label }} --</option>
+        {% endif %}
+
+        {% for key, label in column.filterOptions.choices %}
+        <option value="{{ key }}">{{ label }}</option>
+        {% endfor %}
+    </select>
+{% endif %}
+
+{% if column.options.filter_empty %}
+    <input type="checkbox" id="{{ table.name }}_{{ column.name }}_filter_empty" class="datatables-filter-input">
+{% endif %}
