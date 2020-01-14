@@ -29,5 +29,5 @@
     "autoload": {
         "psr-4": { "gleisonnanet\\DataTablesBundle\\": "" }
     },
-    "minimum-stability":"dev"
+    "minimum-stability": "stable"
 }
