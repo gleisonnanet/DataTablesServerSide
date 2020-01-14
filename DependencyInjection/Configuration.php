@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\DependencyInjection;
+namespace Gleisonnanet\DataTablesBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('voelkel_data_tables', 'array');
+        $rootNode = $treeBuilder->root('Gleisonnanet_data_tables', 'array');
 
         $rootNode
             ->children()

@@ -1,20 +1,20 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Tests\DataTables;
+namespace Gleisonnanet\DataTablesBundle\Tests\DataTables;
 
-use Voelkel\DataTablesBundle\Table\AbstractTableDefinition;
-use Voelkel\DataTablesBundle\Table\Column\CallbackColumn;
-use Voelkel\DataTablesBundle\Table\Column\Column;
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesCountColumn;
-use Voelkel\DataTablesBundle\Table\Column\UnboundColumn;
+use Gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
+use Gleisonnanet\DataTablesBundle\Table\Column\CallbackColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesCountColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\UnboundColumn;
 
 class TestTable extends AbstractTableDefinition
 {
     public function __construct()
     {
-        parent::__construct('Voelkel\DataTablesBundle\Tests\DataTables\Entity\TestUser', 'user');
+        parent::__construct('Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser', 'user');
     }
 
     protected function build()
@@ -29,7 +29,7 @@ class TestTable extends AbstractTableDefinition
                 return $data;
             }))
             ->addColumn(new EntitiesColumn('groups', 'groups', 'id'))
-            ->addColumn(new UnboundColumn('name_unbound', function(\Voelkel\DataTablesBundle\Tests\DataTables\Entity\TestUser $data) {
+            ->addColumn(new UnboundColumn('name_unbound', function(\Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity\TestUser $data) {
                 return '*' . $data->getName() . '*';
             }))
         ;

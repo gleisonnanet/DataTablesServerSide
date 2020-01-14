@@ -5,12 +5,12 @@
     "keywords": [
         "DataTables"
     ],
-    "homepage": "https://github.com/uvoelkel",
+    "homepage": "https://github.com/gleisonnanet/DataTablesServerSide",
     "license": "MIT",
     "authors": [
         {
-            "name": "Ulrich Völkel",
-            "email": "mail@ulrich-voelkel.de"
+            "name": "Gleison de souza luiz",
+            "email": "gleisonnanet@gmail.com"
         }
     ],
     "require": {
@@ -27,11 +27,7 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-4": { "Voelkel\\DataTablesBundle\\": "" }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
+        "psr-4": { "gleisonnanet\\DataTablesBundle\\": "" }
     }
+
 }

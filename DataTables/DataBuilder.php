@@ -1,13 +1,13 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\DataTables;
+namespace Gleisonnanet\DataTablesBundle\DataTables;
 
-use Voelkel\DataTablesBundle\Table\AbstractDataTable;
-use Voelkel\DataTablesBundle\Table\Column\Column;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesScalarColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesCountColumn;
+use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesScalarColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesCountColumn;
 
 class DataBuilder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Table\Filter;
+namespace Gleisonnanet\DataTablesBundle\Table\Filter;
 
 abstract class AbstractColumnFilter
 {

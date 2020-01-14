@@ -5,21 +5,21 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="serverside_datatables.twig_extension" class="Voelkel\DataTablesBundle\Twig\ServersideDataTablesExtension" public="false">
+        <service id="serverside_datatables.twig_extension" class="Gleisonnanet\DataTablesBundle\Twig\ServersideDataTablesExtension" public="false">
             <tag name="twig.extension" />
             <argument type="service" id="service_container" />
         </service>
 
-        <service id="serverside_datatables.table_options_factory" class="Voelkel\DataTablesBundle\DataTables\TableOptionsFactory" public="true">
+        <service id="serverside_datatables.table_options_factory" class="Gleisonnanet\DataTablesBundle\DataTables\TableOptionsFactory" public="true">
             <argument>%serverside_datatables.config%</argument>
             <argument>%kernel.default_locale%</argument>
         </service>
 
-        <service id="serverside_datatables.data_to_string_converter" class="Voelkel\DataTablesBundle\DataTables\DataToStringConverter" public="false">
+        <service id="serverside_datatables.data_to_string_converter" class="Gleisonnanet\DataTablesBundle\DataTables\DataToStringConverter" public="false">
             <argument type="string">%kernel.default_locale%</argument>
         </service>
 
-        <service id="serverside_datatables" class="Voelkel\DataTablesBundle\DataTables\ServerSide" public="true">
+        <service id="serverside_datatables" class="Gleisonnanet\DataTablesBundle\DataTables\ServerSide" public="true">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="serverside_datatables.data_to_string_converter" />
         </service>

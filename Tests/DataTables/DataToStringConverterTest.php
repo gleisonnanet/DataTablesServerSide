@@ -1,8 +1,8 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Tests\DataTables;
+namespace Gleisonnanet\DataTablesBundle\Tests\DataTables;
 
-use Voelkel\DataTablesBundle\DataTables\DataToStringConverter;
+use Gleisonnanet\DataTablesBundle\DataTables\DataToStringConverter;
 
 class DataToStringConverterTest extends \PHPUnit_Framework_TestCase
 {

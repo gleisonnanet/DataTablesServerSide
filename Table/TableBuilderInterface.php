@@ -1,8 +1,8 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Table;
+namespace Gleisonnanet\DataTablesBundle\Table;
 
-use Voelkel\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
 
 interface TableBuilderInterface
 {

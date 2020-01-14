@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Table;
+namespace Gleisonnanet\DataTablesBundle\Table;
 
 class TableSettings implements \ArrayAccess
 {

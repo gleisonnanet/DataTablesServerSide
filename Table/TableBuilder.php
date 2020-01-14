@@ -1,12 +1,12 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Table;
+namespace Gleisonnanet\DataTablesBundle\Table;
 
-use Voelkel\DataTablesBundle\Table\Column\ActionsColumn;
-use Voelkel\DataTablesBundle\Table\Column\CallbackColumn;
-use Voelkel\DataTablesBundle\Table\Column\Column;
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
-use Voelkel\DataTablesBundle\Table\Column\UnboundColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\ActionsColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\CallbackColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\UnboundColumn;
 
 class TableBuilder implements TableBuilderInterface
 {

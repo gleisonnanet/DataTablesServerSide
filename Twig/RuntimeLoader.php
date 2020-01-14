@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Twig;
+namespace Gleisonnanet\DataTablesBundle\Twig;
 
 //use Psr\Container\ContainerInterface;
 

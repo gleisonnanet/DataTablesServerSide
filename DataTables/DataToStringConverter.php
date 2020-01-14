@@ -1,8 +1,8 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\DataTables;
+namespace Gleisonnanet\DataTablesBundle\DataTables;
 
-use Voelkel\DataTablesBundle\Table\Localization;
+use Gleisonnanet\DataTablesBundle\Table\Localization;
 
 class DataToStringConverter
 {

@@ -1,6 +1,6 @@
 DataTablesBundle
 ================
-[![Build Status](https://travis-ci.org/uvoelkel/serverside-datatables-bundle.svg?branch=master)](https://travis-ci.org/uvoelkel/serverside-datatables-bundle)
+[![Build Status](https://travis-ci.org/uGleisonnanet/serverside-datatables-bundle.svg?branch=master)](https://travis-ci.org/uGleisonnanet/serverside-datatables-bundle)
 
 ## What it does
 
@@ -28,7 +28,7 @@ class AppKernel extends Kernel
         $bundles = array(
             // ...
 
-            new Voelkel\DataTablesBundle\VoelkelDataTablesBundle(),
+            new Gleisonnanet\DataTablesBundle\GleisonnanetDataTablesBundle(),
         );
 
         // ...
@@ -44,13 +44,13 @@ After installing the bundle, make sure you add this route to your routing:
 
     # app/config/routing.yml
     datatables:
-        resource: "@VoelkelDataTablesBundle/Resources/config/routing.xml"
+        resource: "@GleisonnanetDataTablesBundle/Resources/config/routing.xml"
 
 
 ### Localization
 
     # app/config/config.yml
-    voelkel_data_tables:
+    Gleisonnanet_data_tables:
         localization:
             locale: "%locale%"
             data:
@@ -70,15 +70,15 @@ Create a Table definition
 
 namespace AppBundle\DataTable;
 
-use Voelkel\DataTablesBundle\Table\AbstractDataTable;
-use Voelkel\DataTablesBundle\Table\TableBuilderInterface;
-use Voelkel\DataTablesBundle\Table\TableOptions;
-use Voelkel\DataTablesBundle\Table\TableSettings;
-use Voelkel\DataTablesBundle\Table\Column\Column;
-use Voelkel\DataTablesBundle\Table\Column\UnboundColumn;
-use Voelkel\DataTablesBundle\Table\Column\CallbackColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesColumn;    
+use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
+use Gleisonnanet\DataTablesBundle\Table\TableBuilderInterface;
+use Gleisonnanet\DataTablesBundle\Table\TableOptions;
+use Gleisonnanet\DataTablesBundle\Table\TableSettings;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\UnboundColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\CallbackColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;    
 
 class CustomerTable extends AbstractDataTable
 {
@@ -181,7 +181,7 @@ And in your index template
 ### Access DI container
 
 ```php
-use Voelkel\DataTablesBundle\Table\AbstractDataTable;
+use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
 
 class CustomerTable extends AbstractDataTable
 {

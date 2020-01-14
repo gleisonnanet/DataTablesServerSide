@@ -1,8 +1,8 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Tests\Table\Column;
+namespace Gleisonnanet\DataTablesBundle\Tests\Table\Column;
 
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
 
 class EntityColumnTest extends \PHPUnit_Framework_TestCase
 {

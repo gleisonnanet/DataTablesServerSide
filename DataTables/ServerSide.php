@@ -1,16 +1,16 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\DataTables;
+namespace Gleisonnanet\DataTablesBundle\DataTables;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
-use Voelkel\DataTablesBundle\Table\AbstractDataTable;
-use Voelkel\DataTablesBundle\DataTables\Request as DataTablesRequest;
-use Voelkel\DataTablesBundle\Table\Column\Column;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesScalarColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesCountColumn;
+use Gleisonnanet\DataTablesBundle\Table\AbstractDataTable;
+use Gleisonnanet\DataTablesBundle\DataTables\Request as DataTablesRequest;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesScalarColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesCountColumn;
 
 class ServerSide
 {
@@ -23,7 +23,7 @@ class ServerSide
     /** @var AbstractDataTable */
     private $table;
 
-    /** @var \Voelkel\DataTablesBundle\DataTables\Request */
+    /** @var \Gleisonnanet\DataTablesBundle\DataTables\Request */
     private $request;
 
     /** @var null|string */
@@ -138,7 +138,7 @@ class ServerSide
             call_user_func($resultCallback, $this->table, $qb, $response, $this->dataConverter);
         } else {
             call_user_func(
-                ['Voelkel\DataTablesBundle\DataTables\DataBuilder', 'build'],
+                ['Gleisonnanet\DataTablesBundle\DataTables\DataBuilder', 'build'],
                 $this->table,
                 $qb,
                 $response,
@@ -164,7 +164,7 @@ class ServerSide
             $column->__set('container', $this->table->getContainer());
 
             /** @var EntityColumn $column */
-            if (get_class($column) === 'Voelkel\DataTablesBundle\Table\Column\EntityColumn') {
+            if (get_class($column) === 'Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn') {
                 $this->joinColumn($qb, $column);
                 $this->hasOneToOneRelation = true;
             }
@@ -286,7 +286,7 @@ class ServerSide
 
         $parameter = ':' . $column->getName() . '_filter';
 
-        if ($column->getOptions()['filter'] instanceof \Voelkel\DataTablesBundle\Table\Filter\AbstractColumnFilter) {
+        if ($column->getOptions()['filter'] instanceof \Gleisonnanet\DataTablesBundle\Table\Filter\AbstractColumnFilter) {
             if (
                 isset($column->getOptions()['filter']->options['field']) &&
                 null !== $column->getOptions()['filter']->options['field']

@@ -1,11 +1,11 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Tests\Table;
+namespace Gleisonnanet\DataTablesBundle\Tests\Table;
 
-use Voelkel\DataTablesBundle\Table\AbstractTableDefinition;
-use Voelkel\DataTablesBundle\Table\TableDefinition;
-use Voelkel\DataTablesBundle\Table\Column\Column;
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\AbstractTableDefinition;
+use Gleisonnanet\DataTablesBundle\Table\TableDefinition;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
 
 class TestDefinition extends AbstractTableDefinition
 {

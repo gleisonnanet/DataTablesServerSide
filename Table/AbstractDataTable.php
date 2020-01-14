@@ -1,13 +1,13 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Table;
+namespace Gleisonnanet\DataTablesBundle\Table;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Voelkel\DataTablesBundle\Table\Column\Column;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesScalarColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntityColumn;
-use Voelkel\DataTablesBundle\Table\Column\EntitiesCountColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesScalarColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntityColumn;
+use Gleisonnanet\DataTablesBundle\Table\Column\EntitiesCountColumn;
 
 abstract class AbstractDataTable implements ContainerAwareInterface
 {
@@ -37,14 +37,14 @@ abstract class AbstractDataTable implements ContainerAwareInterface
     /**
      * @var null|callable
      *
-     * function(\Voelkel\DataTablesBundle\Table\AbstractDataTable $table, \Doctrine\ORM\QueryBuilder $qb, \Voelkel\DataTablesBundle\DataTables\Response $response)
+     * function(\Gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table, \Doctrine\ORM\QueryBuilder $qb, \Gleisonnanet\DataTablesBundle\DataTables\Response $response)
      */
     protected $resultCallback;
 
     /**
      * @var null|callable
      *
-     * function($enity, \Voelkel\DataTablesBundle\Table\AbstractDataTable $table)
+     * function($enity, \Gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table)
      */
     protected $rowCallback;
 

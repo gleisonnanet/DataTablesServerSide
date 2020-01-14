@@ -6,7 +6,7 @@
         http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <route id="serverside_datatables_list" path="/datatables/list/{table}" methods="GET">
-        <default key="_controller">VoelkelDataTablesBundle:ServerSide:list</default>
+        <default key="_controller">GleisonnanetDataTablesBundle:ServerSide:list</default>
         <requirement key="table">[A-z0-9_\-.]*</requirement>
     </route>
 </routes>

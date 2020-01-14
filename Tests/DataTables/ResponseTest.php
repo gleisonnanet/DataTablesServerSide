@@ -1,12 +1,12 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Tests\DataTables;
+namespace Gleisonnanet\DataTablesBundle\Tests\DataTables;
 
 class ResponseTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreate()
     {
-        $dtResponse = new \Voelkel\DataTablesBundle\DataTables\Response();
+        $dtResponse = new \Gleisonnanet\DataTablesBundle\DataTables\Response();
 
         $sfResponse = $dtResponse->create();
         $this->assertEquals('application/json', $sfResponse->headers->get('content-type'));

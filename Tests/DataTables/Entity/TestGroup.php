@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Tests\DataTables\Entity;
+namespace Gleisonnanet\DataTablesBundle\Tests\DataTables\Entity;
 
 class TestGroup
 {

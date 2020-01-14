@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Twig;
+namespace Gleisonnanet\DataTablesBundle\Twig;
 
 use Psr\Container\ContainerInterface;
 
@@ -8,7 +8,7 @@ class TableRenderer
 {
     private $container;
 
-    /** @var \Voelkel\DataTablesBundle\Table\AbstractDataTable[] */
+    /** @var \Gleisonnanet\DataTablesBundle\Table\AbstractDataTable[] */
     private $tables;
 
     /** @var array[] */
@@ -19,7 +19,7 @@ class TableRenderer
         $this->container = $container;
     }
 
-    public function setThemes(\Voelkel\DataTablesBundle\Table\AbstractDataTable $table, $themes)
+    public function setThemes(\Gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table, $themes)
     {
         $table->setContainer($this->container);
         if (isset($this->tables[$table->getName()])) {
@@ -29,12 +29,12 @@ class TableRenderer
         $this->themes[$table->getName()] = $themes;
     }
 
-    public function hasTable(\Voelkel\DataTablesBundle\Table\AbstractDataTable $table)
+    public function hasTable(\Gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table)
     {
         return isset($this->tables[$table->getName()]);
     }
 
-    public function getThemes(\Voelkel\DataTablesBundle\Table\AbstractDataTable $table)
+    public function getThemes(\Gleisonnanet\DataTablesBundle\Table\AbstractDataTable $table)
     {
         if (false === $this->hasTable($table)) {
             return [];

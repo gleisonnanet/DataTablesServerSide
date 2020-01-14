@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\DependencyInjection;
+namespace Gleisonnanet\DataTablesBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,7 +10,7 @@ use Symfony\Component\Config\FileLocator;
 /**
  * @codeCoverageIgnore
  */
-class VoelkelDataTablesExtension extends Extension
+class GleisonnanetDataTablesExtension extends Extension
 {
     /**
      * {@inheritdoc}

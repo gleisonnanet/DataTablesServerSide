@@ -1,8 +1,8 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Tests\Table\Column;
+namespace Gleisonnanet\DataTablesBundle\Tests\Table\Column;
 
-use Voelkel\DataTablesBundle\Table\Column\Column;
+use Gleisonnanet\DataTablesBundle\Table\Column\Column;
 
 class ColumnTest extends \PHPUnit_Framework_TestCase
 {

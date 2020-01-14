@@ -1,6 +1,6 @@
 <?php
 
-namespace Voelkel\DataTablesBundle\Table\Column;
+namespace Gleisonnanet\DataTablesBundle\Table\Column;
 
 class CallbackColumn extends Column
 {
