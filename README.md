@@ -28,7 +28,7 @@ class AppKernel extends Kernel
         $bundles = array(
             // ...
 
-            new Gleisonnanet\DataTablesBundle\GleisonnanetDataTablesBundle(),
+            new Gleisonnanet\DataTablesBundle\gleisonnanetDataTablesBundle(),
         );
 
         // ...
@@ -44,7 +44,7 @@ After installing the bundle, make sure you add this route to your routing:
 
     # app/config/routing.yml
     datatables:
-        resource: "@GleisonnanetDataTablesBundle/Resources/config/routing.xml"
+        resource: "@gleisonnanetDataTablesBundle/Resources/config/routing.xml"
 
 
 ### Localization
